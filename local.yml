@@ -7,3 +7,5 @@
         - htop
         - mc
         - tmux
+  roles:
+    - aws-cli
