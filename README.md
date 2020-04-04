@@ -1,4 +1,4 @@
-# ansible
+# Data Engineering Workstation
 This project's main focus is the development of single laptop/workstation configuration.
 Tool stack installation automation is currently (2020/03) going to be focused on the following tools:
 * Ubuntu 18.04 OS
@@ -12,8 +12,8 @@ Tool stack installation automation is currently (2020/03) going to be focused on
 sudo ansible-pull -U https://github.com/angelddaz/ansible.git 
 ```
 
-### With Docker Compose
-Installing Compose
+### With Docker Compose (Optional / For Testing)
+Installing Docker Compose
 ```bash
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 # To install a different version of Compose, substitute 1.25.4 with the version of Compose you want to use.
@@ -22,9 +22,11 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-Running Your Docker image with Compose
 ```bash
+# Creating a Docker Container
 docker run --name ansible-server -it ubuntu:latest bash
+# Starting up the container
+docker start -ia ansible-server
 ```
 
 ## Necessary Configurations
@@ -33,4 +35,3 @@ docker run --name ansible-server -it ubuntu:latest bash
 #  ALL=(ALL:ALL) ALL ->  ALL=(ALL:ALL) NOPASSWD: ALL
 sudo visudo
 ```
-
