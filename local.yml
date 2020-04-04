@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: laptop
   become: true
   tasks:
   - name: Install htop
