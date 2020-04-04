@@ -16,6 +16,7 @@ sudo ansible-pull -U https://github.com/angelddaz/ansible.git
 Installing Compose
 ```bash
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# To install a different version of Compose, substitute 1.25.4 with the version of Compose you want to use.
 sudo chmod +x /usr/local/bin/docker-compose
 # test the installation
 docker-compose --version
