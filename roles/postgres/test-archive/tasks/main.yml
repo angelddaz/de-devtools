@@ -1,0 +1,3 @@
+---
+# Postgres Variable configuration.
+- include_tasks: postgres_variables.yml

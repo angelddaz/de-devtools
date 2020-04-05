@@ -5,3 +5,4 @@
     - base
     - boto
     - aws-cli
+    - postgres

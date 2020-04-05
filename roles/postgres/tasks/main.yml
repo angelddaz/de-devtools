@@ -1,3 +1,6 @@
 ---
-# Postgres Variable configuration.
-- include_tasks: postgres_variables.yml
+
+- name: installing postgresql
+  become: yes
+  apt:
+    name: ['postgresql', 'postgresql-contrib'] 
