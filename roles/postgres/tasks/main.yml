@@ -1,6 +1,3 @@
 ---
-- include: psql-client.yml
-- include: postgres-server.yml
-  when: install_postgres_server
-
-  # TODO add airflow login creation to local postgres db
+# Postgres Variable configuration.
+- include_tasks: postgres_variables.yml
