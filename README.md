@@ -18,7 +18,21 @@ Future Tools to Configure:
 
 All tools are open source or free tiers. Reference: https://free-for.dev/#/
 
-## Running this playbook
+## Running This Playbook on your Ubuntu machine
+Dependencies
+```bash
+sudo apt update
+sudo apt install software-properties-common
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
+```
+
+Running the playbook
+```bash
+ansible-pull -U https://github.com/angelddaz/ansible.git
+```
+
+
 ```bash
 sudo ansible-pull -UK https://github.com/angelddaz/ansible.git 
 ```
