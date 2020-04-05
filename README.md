@@ -1,12 +1,15 @@
 # Data Engineering Workstation
 This project's main focus is the development of single laptop/workstation configuration.
 
-
 Tool stack installation automation is currently (2020/03) going to be focused on the following tools:
-* Ubuntu 18.04 OS
-* Python
-* PostgreSQL
-* AWS: S3, DynamoDB, Lambda
+* Operating System: Ubuntu 18.04 
+* Languages
+    * Python
+    * PostgreSQL
+* AWS
+    * S3
+    * DynamoDB
+    * Lambda
 * Airflow
 
 Future Tools to Configure:
