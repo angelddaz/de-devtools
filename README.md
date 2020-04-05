@@ -18,7 +18,7 @@ Future Tools to Configure:
 
 All tools are open source or free tiers. Reference: https://free-for.dev/#/
 
-## Running This Playbook on your Ubuntu machine
+## Running This Playbook on your Ubuntu:18.04 machine
 Dependencies
 ```bash
 sudo apt update
@@ -27,17 +27,12 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 ```
 
-Running the playbook
+Running the playbook to install workstation.
 ```bash
-ansible-pull -U https://github.com/angelddaz/ansible.git
+sudo ansible-pull -U https://github.com/angelddaz/ansible.git 
 ```
 
-
-```bash
-sudo ansible-pull -UK https://github.com/angelddaz/ansible.git 
-```
-
-### With Docker Compose (Optional / For Testing)
+### Docker Commands For Testing
 Creating, building, and running a docker container 
 
 ```bash
@@ -45,13 +40,9 @@ Creating, building, and running a docker container
 docker run --name ansible-server -it ubuntu:18.04 bash
 # Building
 docker build .
-# Starting up the container
-docker start -ia ansible-server
 ```
 
-
-misc
-
+### Turning off pw prompt for sudo just for this playbook run
 notes on changes made so far:
 ```bash
 #  ALL=(ALL:ALL) ALL ->  ALL=(ALL:ALL) NOPASSWD: ALL
