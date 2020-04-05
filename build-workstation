@@ -1,0 +1,1 @@
+ansible-pull -U https://github.com/angelddaz/ansible.git
