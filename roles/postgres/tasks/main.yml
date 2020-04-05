@@ -1,6 +1,8 @@
 ---
-
 - name: installing postgresql
   become: yes
   apt:
-    name: ['postgresql', 'postgresql-contrib'] 
+    name: ['postgresql', 'postgresql-contrib']
+
+- name: start postgres
+  include: start-service.yml
