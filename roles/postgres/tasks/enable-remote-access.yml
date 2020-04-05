@@ -2,6 +2,6 @@
 - name: edit postgres config for remote access
   lineinfile:
     path: /etc/postgresql/10/main/pg_hba.conf
-    regexp: "^listen_addresses = 'localhost'$"
+    regexp: "^listen_addresses = 'localhost'.*"
     line: "listen_addresses = '*' # what IP address(es) to listen on;"
     state: present 
