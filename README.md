@@ -42,7 +42,7 @@ Creating, building, and running a docker container
 
 ```bash
 # Creating a Docker Container
-docker run --name ansible-server -it ubuntu:latest bash
+docker run --name ansible-server -it ubuntu:18.04 bash
 # Building
 docker build .
 # Starting up the container
