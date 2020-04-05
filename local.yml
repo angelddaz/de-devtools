@@ -2,7 +2,7 @@
 - hosts: localhost
   become: true
   roles:
-ajalkfdsjaslkd    - base
+    - base
     - boto
     - aws-cli
 
