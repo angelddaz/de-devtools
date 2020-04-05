@@ -4,5 +4,8 @@
   apt:
     name: ['postgresql', 'postgresql-contrib']
 
+- name: enable remote database access
+  include: enable-remote-access.yml
+
 - name: start postgres
   include: start-service.yml
