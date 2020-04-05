@@ -2,5 +2,5 @@
 - name: edit postgres config for remote connections
   lineinfile:
     path: /etc/postgresql/10/main/pg_hba.conf
-    regexp: "^# TYPE  DATABASE        USER            ADDRESS                 METHOD$"
-    insertafter: "host    all             postgres            0.0.0.0/0                trust"
+    insertafter: "^# TYPE  DATABASE        USER            ADDRESS                 METHOD$"
+    line: "host    all             postgres          0.0.0.0/0                trust"
