@@ -30,6 +30,10 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 ```
 
+
+The `ansible-pull` is a small script that will checkout a repo of configuration instructions from git, and then run `ansible-playbook` against that content.
+
+
 Running the playbook to install your Data Engineering tools.
 ```bash
 sudo ansible-pull -U https://github.com/angelddaz/ansible.git 
@@ -45,3 +49,7 @@ docker run --name ansible-server -it ubuntu:18.04 bash
 docker build .
 ```
 
+Following Ansible Syntax best practices with built in linter
+```bash
+ansible-lint local.yml
+```

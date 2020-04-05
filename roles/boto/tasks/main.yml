@@ -1,3 +1,4 @@
 ---
-- pip:
+- name: install boto via pip
+  pip:
     name: boto

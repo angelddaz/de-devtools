@@ -1,3 +1,4 @@
 ---
-- pip: 
-    name=awscli
+- name: install AWS CLI package via pip
+  pip:
+    name: awscli
