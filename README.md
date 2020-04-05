@@ -24,32 +24,26 @@ All tools are open source or free tiers. Reference: https://free-for.dev/#/
 This repository leverages Ansible's Declarative Infrastructure as Code (IaC) to install and deploy DE tools.
 Dependencies
 ```bash
-sudo apt update
-sudo apt install software-properties-common
-sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt install ansible
+sudo apt-get update && apt-get install -y software-properties-common git
+sudo apt-add-repostiroy --yes --update ppa:ansible/ansible
+sudo apt-get install -y ansible
 ```
-
-
-The `ansible-pull` is a small script that will checkout a repo of configuration instructions from git, and then run `ansible-playbook` against that content.
-
-
-Running the playbook to install your Data Engineering tools.
+Downloading the playbook to install your Data Engineering tools.
 ```bash
-sudo ansible-pull -U https://github.com/angelddaz/ansible.git 
+git clone https://github.com/angelddaz/ansible ~/de-devtools
+ansible-playbook ~/de-devtools/main.yml
 ```
 
 ## Testing
-Creating and building a docker container.
-
+Building a docker image and running a docker container.
 ```bash
-# Creating a Docker Container
-docker run --name ansible-server -it ubuntu:18.04 bash
-# Building
-docker build .
+# Creates image
+docker build -t ansible .
+# run container on image
+docker run --rm -it ansible /bin/bash
 ```
 
 Following Ansible Syntax best practices with built in linter
 ```bash
-ansible-lint local.yml
+ansible-lint main.yml
 ```
