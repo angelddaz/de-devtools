@@ -1,5 +1,0 @@
----
-- name: install postgresql packages
-  become: yes
-  apt:
-    name: ['postgresql-{{ postgres_version }}', 'libpq-dev', 'postgresql-contrib-{{ postgres_version }}', 'libxslt-dev', 'libxml2-dev']
