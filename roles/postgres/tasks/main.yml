@@ -1,0 +1,6 @@
+---
+- include: psql-client.yml
+- include: postgres-server.yml
+  when: install_postgres_server
+
+  # TODO add airflow login creation to local postgres db
