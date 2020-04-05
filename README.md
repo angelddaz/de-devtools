@@ -1,7 +1,12 @@
 # Data Engineering Workstation
-This project's main focus is the development of single laptop/workstation configuration.
+# Data Engineer's toolkit
+This project's main focus is complete automation of the deployment of Data Engineering tools.
 
-Tool stack installation automation is currently (2020/03) going to be focused on the following tools:
+Ever have trouble installing Open Source Software? 
+
+With an Ubuntu operating system, you are five commands away from faultless installation of the following Data Engineering tools:
+
+## Tool Focus
 * Operating System: Ubuntu 18.04 
 * Languages
     * Python
@@ -12,7 +17,7 @@ Tool stack installation automation is currently (2020/03) going to be focused on
     * Lambda
 * Airflow
 
-Future Tools to Configure:
+## Future Tools:
 * Spark
 * [dbt](https://www.getdbt.com/)
 
@@ -32,7 +37,7 @@ Running the playbook to install workstation.
 sudo ansible-pull -U https://github.com/angelddaz/ansible.git 
 ```
 
-### Docker Commands For Testing
+## Testing
 Creating, building, and running a docker container 
 
 ```bash
@@ -41,11 +46,4 @@ docker run --name ansible-server -it ubuntu:18.04 bash
 # Building
 docker build .
 ```
-
-### Turning off pw prompt for sudo just for this playbook run
-notes on changes made so far:
-```bash
-#  ALL=(ALL:ALL) ALL ->  ALL=(ALL:ALL) NOPASSWD: ALL
-sudo visudo
-
 
