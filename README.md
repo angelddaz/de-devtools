@@ -7,13 +7,12 @@ This repos allows you to be five commands away from writing ELT code with a mode
 ## Tool Focus
 * Operating System: Ubuntu 18.04 
 * Languages
-    * Python
-    * PostgreSQL
-* AWS
-    * S3
-    * DynamoDB
-    * Lambda
-* Airflow
+    * Python 3
+    * PostgreSQL 10
+* Open Source Software
+    * Airflow
+* Cloud
+    * AWS CLI 
 
 All tools are open source or free tiers. Reference: https://free-for.dev/#/
 ## Future Tools:

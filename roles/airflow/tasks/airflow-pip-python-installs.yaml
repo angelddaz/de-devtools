@@ -1,8 +1,7 @@
 ---
-- name: upgrade pip3
-  command: 'pip3 install --upgrade pip setuptools'
-
-- name: install airflow and py dependencies
-  pip:
-    requirements: files/requirements.txt
-    executable: pip3.3
+- name: install pip3
+  command: 'apt-get install python3-pip'
+  
+- name: install apache-airflow
+  become: postgres
+  command: 'pip3 install apache-airflow'
