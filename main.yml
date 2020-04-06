@@ -6,3 +6,4 @@
     - boto
     - aws-cli
     - postgres
+    - airflow
