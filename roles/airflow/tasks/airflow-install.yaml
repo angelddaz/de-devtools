@@ -1,0 +1,45 @@
+---
+- name: create airflow group
+  group:
+    name: airflow
+
+- name: create airflow user
+  user:
+    name: airflow
+    group: airflow
+    shell: /bin/bash
+
+- name: create airflow run dir
+  file:
+    path: "/run/airflow"
+    owner: airflow
+    group: airflow
+    state: directory
+
+- name: create airflow home
+  file:
+    path: "/home/de-devtools/airflow"
+    owner: airflow
+    group: airflow
+    state: directory
+
+- name: set airflow home dir as environment variable
+  lineinfile:
+    path: /etc/environment
+    line: 'AIRFLOW_HOME=/home/de-devtools/airflow'
+
+- name: install airflow
+  pip:
+    executable: pip3
+    name: apache-airflow
+
+
+    #- name: set airflow metadata db to local postgres
+    # lineinfile:
+    #path: /home/de-devtools/airflow/airflow.cfg
+    #regexp: '^# sql_alchemy_conn = sqlite:////tmp/airflow.db$'
+    #line: 'sql_alchemy_conn = postgres://postgres@localhost:5432'
+    #state: present
+
+# - name: initialize airflow metadata db
+#   comannd: 'airflow initdb'

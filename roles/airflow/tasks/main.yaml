@@ -3,13 +3,10 @@
   include: postgres-trust-airflow.yaml
 
 - name: start postgres as service
-  include: postgres-service-start.yaml
+  include: postgres-start-service.yaml
 
 - name: create airflow db objects
   include: postgres-airflow-config.yaml
 
 - name: install apache airflow
-  include: airflow-pip-python-installs.yaml
-
-- name: airflow config file download
-  include: airflow-config.yaml 
+  include: airflow-install.yaml
