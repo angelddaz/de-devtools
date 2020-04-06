@@ -1,6 +1,13 @@
+---
 - name: initialize airflow db
-  become: airflow
   command: "airflow initdb"
+
+- name: change airflow files permissions
+  file:
+    path: /home/de-devtools/airflow/unittests.cfg
+    owner: airflow
+    group: airflow
+    mode: '660'
 
 - name: set airflow metadata db to local postgres
   lineinfile:
@@ -17,5 +24,4 @@
     state: present
 
 - name: reset db again with postgres conn
-  become: airflow
   command: "service postgresql start && airflow resetdb --yes"

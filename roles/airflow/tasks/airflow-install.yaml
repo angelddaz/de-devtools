@@ -32,8 +32,10 @@
   pip:
     executable: pip3
     name: ['psycopg2-binary']
+  become: airflow
 
 - name: install airflow
   pip:
     executable: pip3
     name: ['apache-airflow']
+  become: airflow

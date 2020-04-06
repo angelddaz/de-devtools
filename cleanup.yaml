@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  become: true
+  roles:
+   - cleanup # dropping airflow user and db for testing
