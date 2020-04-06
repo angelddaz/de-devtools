@@ -9,4 +9,4 @@
   include: postgres-airflow-config.yaml
 
 - name: install apache airflow
-  include: airflow-install.yaml
+  include: airflow-pip-python-installs.yaml

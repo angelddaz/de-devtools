@@ -1,0 +1,10 @@
+---
+- name: install pip3
+  pip:
+    name: pip3
+
+- name: upgrade pip3
+  command: 'pip3 install --upgrade pip setuptools'
+
+- name: install apache-airflow and py dependencies
+  command: 'pip3 install -r /home/de-devtools/requirements.txt'
