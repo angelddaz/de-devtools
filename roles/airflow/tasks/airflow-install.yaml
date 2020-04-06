@@ -40,9 +40,14 @@
 - name: set airflow metadata db to local postgres
   lineinfile:
     path: ~/airflow/airflow.cfg
-    regexp: '^# sql_alchemy_conn = sqlite:////tmp/airflow.db$'
+    regexp: '^sql_alchemy_conn = sqlite:////tmp/airflow.db$'
     line: 'sql_alchemy_conn = postgres://postgres@localhost:5432'
     state: present
 
-# - name: initialize airflow metadata db
-#   comannd: 'airflow initdb'
+- name: reset db with postgres conn
+  become: airflow
+  command: "airflow resetdb"
+
+- name: init db again with postgres conn
+  become: airflow
+  command: "airflow initdb
