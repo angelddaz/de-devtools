@@ -7,4 +7,4 @@
     - aws-cli
     - postgres
     - airflow
-    - cleanup
+#   - cleanup # dropping airflow user and db for testing
