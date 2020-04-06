@@ -1,0 +1,8 @@
+---
+- name: drop airflow user
+  command: psql -c 'DROP USER airflow;'
+  become_user: postgres
+
+- name: drop airflow db
+  command: psql -c 'DROP DATABASE airflow;'
+  become_user: postgres

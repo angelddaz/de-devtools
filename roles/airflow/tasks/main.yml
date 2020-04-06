@@ -1,0 +1,12 @@
+---
+- name: postgres db config to trust airflow
+  include: postgres-trust-airflow.yaml
+
+- name: start postgres as service
+  include: postgres-service-start.yaml
+
+- name: create airflow db objects
+  include: postgres-airflow-config.yaml
+
+- name: install apache airflow
+  include: airflow-install.yaml

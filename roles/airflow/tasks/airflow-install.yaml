@@ -1,0 +1,4 @@
+---
+- name: install apache-airflow
+  pip:
+    name: ['apache-airflow']

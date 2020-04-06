@@ -7,3 +7,4 @@
     - aws-cli
     - postgres
     - airflow
+    - cleanup
