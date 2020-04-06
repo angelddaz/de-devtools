@@ -1,4 +1,0 @@
----
-- name: creating psql airflow db and user
-  command: psql -c 'CREATE USER airflow;'
-  become_user: postgres
