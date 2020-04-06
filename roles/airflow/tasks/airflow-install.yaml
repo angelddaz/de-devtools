@@ -28,9 +28,12 @@
     path: /etc/environment
     line: 'AIRFLOW_HOME=/home/de-devtools/airflow'
 
+- name: install pip dependencies
+  pip:
+    executable: pip3
+    name: ['psycopg2']
+
 - name: install airflow
   pip:
     executable: pip3
-    name: apache-airflow
-
-
+    name: ['apache-airflow']

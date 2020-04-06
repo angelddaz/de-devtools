@@ -1,5 +1,5 @@
 - name: initialize airflow db
-  become: airflow  
+  become: airflow
   command: "airflow initdb"
 
 - name: set airflow metadata db to local postgres
