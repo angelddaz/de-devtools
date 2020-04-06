@@ -1,9 +1,9 @@
 ---
 - name: create airflow user and db in postgres server
-  include: create-psql-db-user.yml
-
-- name: postgres config to trust airflow user
-  include: postgres-trust-airflow.yml
+  include: create-psql-db-user.yaml
 
 - name: start postgres
-  include: start-service.yml
+  include: start-service.yaml
+
+- name: postgres config to trust airflow user
+  include: postgres-trust-airflow.yaml

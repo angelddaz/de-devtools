@@ -5,7 +5,7 @@
     name: ['postgresql', 'postgresql-contrib']
 
 - name: enable remote database connections
-  include: enable-remote-connections.yml
+  include: enable-remote-connections.yaml
 
 - name: enable remote database access
-  include: enable-remote-access.yml
+  include: enable-remote-access.yaml
