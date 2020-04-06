@@ -31,7 +31,7 @@
 - name: install pip dependencies
   pip:
     executable: pip3
-    name: ['psycopg2']
+    name: ['psycopg2-binary']
 
 - name: install airflow
   pip:
