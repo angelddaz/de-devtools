@@ -1,6 +1,6 @@
 ---
-- name: edit postgres config for remote connections
+- name: edit postgres config for airflow connections
   lineinfile:
     path: /etc/postgresql/10/main/pg_hba.conf
-    insertafter: "^# TYPE  DATABASE        USER            ADDRESS                 METHOD$"
-    line: "host    all             postgres          0.0.0.0/0                trust"
+    line: "host    all             airflow          0.0.0.0/0                trust"
+    insertafter: EOF
