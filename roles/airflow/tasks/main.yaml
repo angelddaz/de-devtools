@@ -10,3 +10,6 @@
 
 - name: install apache airflow
   include: airflow-pip-python-installs.yaml
+
+- name: airflow config file download
+  include: airflow-config.yaml 
