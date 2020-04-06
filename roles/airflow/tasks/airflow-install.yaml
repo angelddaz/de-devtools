@@ -50,4 +50,4 @@
 
 - name: init db again with postgres conn
   become: airflow
-  command: "airflow initdb
+  command: "airflow initdb"
