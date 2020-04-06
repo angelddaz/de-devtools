@@ -4,7 +4,7 @@
   become_user: postgres
 
 - name: creating psql airflow db
-  command: psql -c 'CREATEDB airflow;'
+  command: psql -c 'CREATE DATABASE airflow;'
   become_user: postgres
 
 - name: making airflow superuser 
