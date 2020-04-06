@@ -5,5 +5,5 @@ RUN apt-get install -y ansible
 
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 RUN git clone https://github.com/angelddaz/ansible /home/ansible/
-RUN ansible-playbook /home/ansible/main.yml -v
+RUN ansible-playbook /home/ansible/main.yaml -v
 RUN echo 'root:docker' | chpasswd
