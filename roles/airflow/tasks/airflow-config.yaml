@@ -11,4 +11,4 @@
 
 - name: reset db again with postgres conn
   become: airflow
-  command: "airflow resetdb"
+  command: "airflow resetdb --yes"
