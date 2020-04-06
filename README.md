@@ -1,7 +1,7 @@
 # Data Engineering DevTools
 This project's main focus is complete automation of Data Engineering tool Deployment.
 
-Instead of spending frustrating hours on tool installation, config, and deployment.
+Instead of spending frustrating hours on tool installation, config, and deployment, you can close this repos and run it.
 This repos allows you to be five commands away from writing ELT code with a modern Data Infrastructure tool stack.
 
 ## Tool Focus
@@ -30,7 +30,7 @@ sudo apt-get install -y ansible
 ```
 Downloading the playbook to install your Data Engineering tools.
 ```bash
-git clone https://github.com/angelddaz/ansible ~/de-devtools
+git clone https://github.com/angelddaz/de-devtools ~/de-devtools
 ansible-playbook ~/de-devtools/main.yml
 ```
 
@@ -38,9 +38,9 @@ ansible-playbook ~/de-devtools/main.yml
 Building a docker image and running a docker container.
 ```bash
 # Creates image
-docker build -t ansible .
+docker build -t de-devtools .
 # run container on image
-docker run --rm -it ansible /bin/bash
+docker run --rm -it de-devtools /bin/bash
 ```
 
 Following Ansible Syntax best practices with built in linter
