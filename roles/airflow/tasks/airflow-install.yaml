@@ -26,7 +26,7 @@
 - name: set airflow home dir as environment variable
   lineinfile:
     path: /etc/environment
-    line: 'AIRFLOW_HOME=~/airflow'
+    line: 'AIRFLOW_HOME=~/de-devtools/airflow'
 
 - name: install airflow
   pip:
