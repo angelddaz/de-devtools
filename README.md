@@ -1,10 +1,12 @@
 # Data Engineering DevTools
-This project's main focus is complete automation of Data Engineering tool Deployment.
+This project's main focus is complete automation of Data Engineering (DE) tool Deployment.
 
-Instead of spending frustrating hours on tool installation, config, and deployment, you can close this repos and run it.
+Instead of spending frustrating hours on tool installation, config, and deployment, you can clone this repos and run it.
 This repos allows you to be five commands away from writing ELT code with a modern Data Infrastructure tool stack.
 
-## Tool Focus
+This repository leverages Ansible's Declarative Infrastructure as Code (IaC) to install and deploy DE tools.
+
+### Tool Focus
 * Operating System: Ubuntu 18.04 
 * Languages
     * Python 3
@@ -19,14 +21,18 @@ All tools are open source or free tiers. Reference: https://free-for.dev/#/
 * Spark
 * [dbt](https://www.getdbt.com/)
 
-## Running This Playbook on your Ubuntu:18.04 machine
-This repository leverages Ansible's Declarative Infrastructure as Code (IaC) to install and deploy DE tools.
-Dependencies
+### Software Dependencies
 ```bash
 sudo apt-get update && apt-get install -y software-properties-common git
 sudo apt-add-repostiroy --yes --update ppa:ansible/ansible
 sudo apt-get install -y ansible
 ```
+Ubuntu:18.04 Operating System
+
+### PostgreSQL Database Object Conflicts
+Make sure you do not have a local Postgres Database and Roles called `airflow`.
+
+## Download and Installation
 Downloading the playbook to install your Data Engineering tools.
 ```bash
 git clone https://github.com/angelddaz/de-devtools ~/de-devtools
