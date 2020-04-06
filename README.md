@@ -24,7 +24,7 @@ All tools are open source or free tiers. Reference: https://free-for.dev/#/
 ### Software Dependencies
 ```bash
 sudo apt-get update && apt-get install -y software-properties-common git
-sudo apt-add-repostiroy --yes --update ppa:ansible/ansible
+sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt-get install -y ansible
 ```
 Ubuntu:18.04 Operating System
