@@ -33,9 +33,13 @@
     executable: pip3
     name: apache-airflow
 
+- name: initialize airflow db
+  become: airflow  
+  command: "airflow initdb"
+
 - name: set airflow metadata db to local postgres
   lineinfile:
-    path: /home/de-devtools/airflow/airflow.cfg
+    path: ~/airflow/airflow.cfg
     regexp: '^# sql_alchemy_conn = sqlite:////tmp/airflow.db$'
     line: 'sql_alchemy_conn = postgres://postgres@localhost:5432'
     state: present
