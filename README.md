@@ -1,9 +1,8 @@
 # Data Engineering DevTools
 This project's main focus is complete automation of Data Engineering (DE) tool Deployment.
 
-Instead of spending frustrating hours on tool installation and configuration, you can clone this repos and run the attached Ansible playbook.
-
-This repos allows you to be five commands away from writing ELT code with a modern Data Infrastructure tool stack.
+Instead of spending frustrating hours on tool installation and configuration, you can clone this repos and run the attached Ansible playbook. 
+This repository lets you to be five commands away from writing ELT code with a modern Data Infrastructure tool stack.
 
 This repository leverages Ansible's Declarative Infrastructure as Code (IaC) to install and configure DE tools.
 
