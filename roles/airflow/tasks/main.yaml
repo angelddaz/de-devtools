@@ -11,7 +11,7 @@
 
 # airflow install and config
 - name: install apache airflow
-  include: airflow-pull.yaml
+  include: airflow-clone.yaml
 
 - name: update metadata db config
   include: airflow-metadata-db.yaml
