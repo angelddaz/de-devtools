@@ -2,6 +2,5 @@
 - name: install pip dependencies
   become: yes
   pip:
-    executable: pip3
     name: ['docker', 'docker-compose']
 
