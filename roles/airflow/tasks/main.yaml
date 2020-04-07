@@ -11,10 +11,8 @@
 
 # airflow install and config
 - name: install apache airflow
-  include: airflow-pull-build.yaml
+  include: airflow-pull.yaml
 
 - name: update metadata db config
   include: airflow-metadata-db.yaml
 
-- name: start airflow
-  include: airflow-start.yaml
