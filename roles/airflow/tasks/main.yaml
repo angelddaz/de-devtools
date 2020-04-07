@@ -13,5 +13,5 @@
 - name: install apache airflow
   include: airflow-install.yaml
 
-  #- name: config apache airflow
-  #include: airflow-config.yaml
+- name: config apache airflow
+  include: airflow-config.yaml
