@@ -1,4 +1,5 @@
 ---
+
 - name: initialize airflow db
   command: "airflow initdb"
 

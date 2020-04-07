@@ -18,7 +18,7 @@
 
 - name: create airflow home
   file:
-    path: "/home/de-devtools/airflow"
+    path: "/home/airflow/"
     owner: airflow
     group: airflow
     state: directory
@@ -26,8 +26,9 @@
 - name: set airflow home dir as environment variable
   lineinfile:
     path: /etc/environment
-    line: 'AIRFLOW_HOME=/home/de-devtools/airflow'
+    line: 'AIRFLOW_HOME=/home/airflow'
 
+# this install list can grow in the future to include common data engineering installs.
 - name: install pip dependencies
   pip:
     executable: pip3
