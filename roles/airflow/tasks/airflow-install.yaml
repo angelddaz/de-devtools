@@ -2,23 +2,28 @@
 - name: create airflow group
   group:
     name: airflow
+    state: present
 
-- name: create airflow user
+- name: Allow 'airflow' group to have passwordless sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%airflow'
+    line: '%airflow ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'
+
+- name: add airflow user to airflow sudo group
   user:
     name: airflow
     group: airflow
     shell: /bin/bash
-
-- name: create airflow run dir
-  file:
-    path: "/run/airflow"
-    owner: airflow
-    group: airflow
-    state: directory
+    createhome: no
+    state: present
+    append: yes
 
 - name: create airflow home
   file:
-    path: "/home/airflow/"
+    path: "/home/airflow_home"
     owner: airflow
     group: airflow
     state: directory
@@ -26,17 +31,18 @@
 - name: set airflow home dir as environment variable
   lineinfile:
     path: /etc/environment
-    line: 'AIRFLOW_HOME=/home/airflow'
+    line: 'AIRFLOW_HOME=/home/airflow_home'
 
-# this install list can grow in the future to include common data engineering installs.
-- name: install pip dependencies
+- name: apt installs as airflow
+  include_role:
+    name: base
+  vars:
+    user: airflow
+
+- name: airflow pip installs including 'apache-airflow'
+  become: airflow
+  become_method: sudo
   pip:
     executable: pip3
-    name: ['psycopg2-binary']
-  become: airflow
+    name: ['psycopg2-binary', 'apache-airflow']
 
-- name: install airflow
-  pip:
-    executable: pip3
-    name: ['apache-airflow']
-  become: airflow

@@ -1,7 +1,6 @@
 ---
 - name: initialize airflow db
-  command: "/run/airflow initdb"
-  become: yes
+  command: "airflow initdb"
 
   #- name: change airflow files permissions
   #  file:

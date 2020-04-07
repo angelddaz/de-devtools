@@ -1,0 +1,11 @@
+---
+- name: Update all packages
+  apt: upgrade=dist
+  become: yes
+
+- name: install basic packages
+  become: yes
+  become_user: "{{ user}}" 
+  become_method: sudo
+  apt:
+    name: ['curl', 'vim', 'libxslt1-dev', 'libxml2-dev', 'zip', 'libssl-dev', 'unzip', 'python-pip', 'python3-pip', 'python-psycopg2', 'apg', 'mercurial', 'git', 'python-dev', 'python3-apt']
