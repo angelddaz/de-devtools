@@ -6,6 +6,8 @@ This repository lets you to be five commands away from writing ELT code with a m
 
 This repository leverages Ansible's Declarative Infrastructure as Code (IaC) to install and configure DE tools.
 
+![](images/20200406screenshot.png)
+
 ### Tool Focus
 * Operating System: Ubuntu 18.04 
 * Languages
