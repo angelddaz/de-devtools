@@ -9,9 +9,12 @@
 - name: create airflow db objects
   include: postgres-airflow-config.yaml
 
-# airflow install config and deploy
+# airflow install and config
 - name: install apache airflow
-  include: airflow-install.yaml
+  include: airflow-pull-build.yaml
 
-- name: config apache airflow
-  include: airflow-config.yaml
+- name: update metadata db config
+  include: airflow-metadata-db.yaml
+
+- name: start airflow
+  include: airflow-start.yaml

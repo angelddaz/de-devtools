@@ -1,0 +1,12 @@
+---
+- git:
+   repo: https://github.com/puckel/docker-airflow.git
+   dest: ./airflow_home
+   
+- name: build puckel airflow image
+  docker_image:
+    build:
+      path: ./airflow_home
+    name: puckel/airflow:latest
+    source: build
+

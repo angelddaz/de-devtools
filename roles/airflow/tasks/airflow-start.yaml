@@ -1,0 +1,4 @@
+---
+- name: start airflow with localexecutor off postgres
+  command: 'docker-compose -f ./airflow_home/docker-compose-LocalExecutor.yml up -d'
+  become: yes

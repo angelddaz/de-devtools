@@ -6,3 +6,7 @@
 - name: drop airflow db
   command: psql -c 'DROP DATABASE airflow;'
   become_user: postgres
+
+- name: rm airflow_home
+  command: 'rm -rf ./airflow_home'
+  become: yes

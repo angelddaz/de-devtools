@@ -41,6 +41,15 @@ git clone https://github.com/angelddaz/de-devtools ~/de-devtools
 ansible-playbook ~/de-devtools/main.yml
 ```
 
+## Running Installed Tools
+### Airflow
+Create and Edit DAGs here:
+* `~/de-devtools/airflow_home/dags`
+(Optional) Make an alias in your `~/.bashrc` file for easier [CLI](https://airflow.apache.org/docs/stable/cli.html) usage `airflow [subcommand]`: 
+* `alias airflow=docker run --rm -it puckel/docker-airflow airflow'
+UI here: 
+* [localhost:8080](http://localhost:8080/)
+
 ## Testing
 Building a docker image and running a docker container.
 ```bash
