@@ -1,8 +1,4 @@
 ---
-- pip:
-  name: docker
-
-
 - git:
    repo: https://github.com/puckel/docker-airflow.git
    dest: ./airflow_home

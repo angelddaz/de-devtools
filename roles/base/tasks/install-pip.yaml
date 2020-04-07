@@ -3,5 +3,5 @@
   become: yes
   pip:
     executable: pip3
-    name: ['psycopg2-binary']
+    name: ['docker']
 
