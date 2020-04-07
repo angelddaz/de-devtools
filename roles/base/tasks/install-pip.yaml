@@ -3,5 +3,5 @@
   become: yes
   pip:
     executable: pip3
-    name: ['docker']
+    name: ['docker', 'docker-compose']
 
