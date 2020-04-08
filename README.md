@@ -61,7 +61,10 @@ docker build .
 Use the LocalExecutor if you're not advanced in airflow and are using a single server or computer.
 ```bash
 # working directory: ~/de-devtools/docker-airflow
+
+# choose local
 docker-compose -f docker-compose-LocalExecutor.yml up -d
+# or choose Celery
 docker-compose -f docker-compose-CeleryExecutor.yml up -d
 ```
 
