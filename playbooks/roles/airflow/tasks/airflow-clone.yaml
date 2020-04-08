@@ -2,4 +2,4 @@
 - git:
    repo: https://github.com/puckel/docker-airflow.git
    dest: ~/de-devtools/docker-airflow
-   
+   force: yes 

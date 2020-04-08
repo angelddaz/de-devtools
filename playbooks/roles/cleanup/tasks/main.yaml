@@ -8,5 +8,5 @@
   become_user: postgres
 
 - name: rm airflow_home
-  command: 'rm -rf ./docker-airflow'
+  command: 'rm -rf ../docker-airflow'
   become: yes
