@@ -41,7 +41,7 @@ git clone https://github.com/angelddaz/de-devtools ~/de-devtools
 ansible-playbook ~/de-devtools/main.yml
 ```
 
-## Running Installed Tools
+## Running Installed Tools After Running ansible-playbook
 ### Airflow
 1. Build the downloaded and configured puckel docker image
 ```bash
