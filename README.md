@@ -15,7 +15,7 @@ cd ~/de-devtools && make local
 ```
 <img src="https://github.com/angelddaz/de-devtools/blob/master/images/20200406screenshot.png" width="70%" height="70%">
 
-### Tool Focus
+## Tool Focus
 * Operating System: Ubuntu 18.04 
 * Languages
     * Python 3
@@ -23,30 +23,29 @@ cd ~/de-devtools && make local
 * Open Source Software
     * Airflow
     * Spark (Work in Progress)
+    * Presto (Work in Progress)
     * dbt (Work in Progress)
 * Cloud
-    * AWS [S3, DynamoDB, Lambda]
+    * AWS [S3, DynamoDB, Lambda] (Works in Progress)
 
 All tools are open source or free tiers. Reference: https://free-for.dev/#/
 
 ### Software Dependencies
 Ubuntu:18.04 Operating System
 
-apt dependencies:
+apt dependencies for the ansible playbook:
 ```bash
 sudo apt-get update && apt-get install -y software-properties-common git
 sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt-get install -y ansible
 ```
 
-### PostgreSQL Database Object Conflicts
-Make sure you do not have a local Postgres Database and Roles called `airflow`.
+# Running Installed and Configured Tols
 
+## Running Airflow
 
+PostgreSQL Database Object Conflicts: Make sure you do not have a local Postgres Database and Roles called `airflow`.
 
-## Running Installed and Configured Tols
-
-### Running Airflow
 1. Make sure your PostgreSQL Service is running
 ```bash
 sudo service postgresql start
@@ -69,10 +68,6 @@ docker-compose -f docker-compose-LocalExecutor.yml up -d
 Make an alias in your `~/.bashrc` file for easier [CLI](https://airflow.apache.org/docs/stable/cli.html) usage `airflow [subcommand]`: 
 
 * `alias airflow='docker run --rm -it puckel/docker-airflow airflow'`
-
-### Spark
-Coming soon!
-
 
 ## Testing
 Building a docker image and running a docker container.
