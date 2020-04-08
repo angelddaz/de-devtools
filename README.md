@@ -44,23 +44,30 @@ Make sure you do not have a local Postgres Database and Roles called `airflow`.
 
 
 
-## Running Installed Tools After Running ansible-playbook
+## Running Installed and Configured Tols
 
-### Airflow
-1. Build the downloaded and configured puckel docker image
-reference: https://github.com/puckel/docker-airflow
+### Running Airflow
+1. Make sure your PostgreSQL Service is running
+```bash
+sudo service postgresql start
+```
+
+2. Build the downloaded and configured [puckel docker image](https://github.com/puckel/docker-airflow)
 ```bash
 cd ~/de-devtools/docker-airflow
 docker build .
 ```
-2. Run a preconfigured container.
+
+3. Run a preconfigured container.
 LocalExecutor is preconfigured to allow concurrent jobs.
 ```bash
-# still in ~/de-devtools/docker-airflow
+# working directory: ~/de-devtools/docker-airflow
 docker-compose -f docker-compose-LocalExecutor.yml up -d
 ```
 
-**(Optional)** Make an alias in your `~/.bashrc` file for easier [CLI](https://airflow.apache.org/docs/stable/cli.html) usage `airflow [subcommand]`: 
+4. **(Optional)** Ease of life config:
+Make an alias in your `~/.bashrc` file for easier [CLI](https://airflow.apache.org/docs/stable/cli.html) usage `airflow [subcommand]`: 
+
 * `alias airflow='docker run --rm -it puckel/docker-airflow airflow'`
 
 ### Spark
