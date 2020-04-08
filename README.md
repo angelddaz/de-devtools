@@ -35,33 +35,35 @@ Ubuntu:18.04 Operating System
 Make sure you do not have a local Postgres Database and Roles called `airflow`.
 
 ## Download and Installation
-Downloading the playbook to install your Data Engineering tools.
+Downloading the playbook to install Data Engineering tools on your server.
 ```bash
 git clone https://github.com/angelddaz/de-devtools ~/de-devtools
-ansible-playbook ~/de-devtools/main.yml
+cd ~/de-devtools && make local
 ```
 
 ## Running Installed Tools After Running ansible-playbook
+
 ### Airflow
 1. Build the downloaded and configured puckel docker image
 ```bash
 cd ~/de-devtools/docker-airflow
 docker build .
 ```
-2. Run a preconfigured container off of the built image
+2. Run a preconfigured container.
+LocalExecutor is preconfigured to allow concurrent jobs.
 ```bash
 # still in ~/de-devtools/docker-airflow
 docker-compose -f docker-compose-LocalExecutor.yml up -d
 ```
 
-#### Airflow notes:
-Create and Edit DAGs here:
-* `~/de-devtools/airflow_home/dags` 
-
 **(Optional)** Make an alias in your `~/.bashrc` file for easier [CLI](https://airflow.apache.org/docs/stable/cli.html) usage `airflow [subcommand]`: 
 * `alias airflow=docker run --rm -it puckel/docker-airflow airflow'
 UI here: 
-* [localhost:8080](http://localhost:8080/)
+#### * [localhost:8080](http://localhost:8080/)
+
+### Spark
+Coming soon!
+
 
 ## Testing
 Building a docker image and running a docker container.
@@ -72,6 +74,7 @@ docker build -t de-devtools .
 docker run --rm -it de-devtools /bin/bash
 ```
 
+## Code Format Standards
 Following Ansible Syntax best practices with built in linter
 ```bash
 ansible-lint main.yml
