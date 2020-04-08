@@ -9,4 +9,4 @@ clean:
 	ansible-playbook ./playbooks/cleanup.yaml
 
 local:
-	ansible-playbook ./playbooks/main.yaml
+	sudo ansible-playbook ./playbooks/main.yaml
