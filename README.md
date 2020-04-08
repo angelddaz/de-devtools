@@ -46,6 +46,7 @@ Make sure you do not have a local Postgres Database and Roles called `airflow`.
 
 ### Airflow
 1. Build the downloaded and configured puckel docker image
+reference: https://github.com/puckel/docker-airflow
 ```bash
 cd ~/de-devtools/docker-airflow
 docker build .
@@ -59,8 +60,6 @@ docker-compose -f docker-compose-LocalExecutor.yml up -d
 
 **(Optional)** Make an alias in your `~/.bashrc` file for easier [CLI](https://airflow.apache.org/docs/stable/cli.html) usage `airflow [subcommand]`: 
 * `alias airflow=docker run --rm -it puckel/docker-airflow airflow'
-UI here: 
-#### * [localhost:8080](http://localhost:8080/)
 
 ### Spark
 Coming soon!
