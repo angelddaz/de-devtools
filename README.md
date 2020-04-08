@@ -40,7 +40,7 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt-get install -y ansible
 ```
 
-# Running Installed and Configured Tols
+# Running Installed and Configured Tools
 
 ## Running Airflow
 
