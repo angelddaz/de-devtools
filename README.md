@@ -58,10 +58,11 @@ docker build .
 ```
 
 3. Run a preconfigured container.
-LocalExecutor is preconfigured to allow concurrent jobs.
+Use the LocalExecutor if you're not advanced in airflow and are using a single server or computer.
 ```bash
 # working directory: ~/de-devtools/docker-airflow
 docker-compose -f docker-compose-LocalExecutor.yml up -d
+docker-compose -f docker-compose-CeleryExecutor.yml up -d
 ```
 
 4. **(Optional)** Ease of life config:
