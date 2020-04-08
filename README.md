@@ -1,5 +1,5 @@
 # Data Engineering DevTools
-This project's main focus is complete automation of Data Engineering (DE) tool Deployment.
+This project's main focus is complete automation of Data Engineering (DE) tool Installation and Configuration.
 
 Instead of spending frustrating hours on tool installation and configuration, you can clone this repos and run the attached Ansible playbook. 
 This repository lets you to be five commands away from writing ELT code with a modern Data Infrastructure tool stack.
