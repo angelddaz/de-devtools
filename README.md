@@ -6,6 +6,13 @@ This repository lets you to be five commands away from writing ELT code with a m
 
 This repository leverages Ansible's Declarative Infrastructure as Code (IaC) to install and configure DE tools.
 
+## Download and Installation
+Downloading the playbook to install Data Engineering tools on your server.
+```bash
+git clone https://github.com/angelddaz/de-devtools ~/de-devtools
+# see ./Makefile for make 
+cd ~/de-devtools && make local
+```
 <img src="https://github.com/angelddaz/de-devtools/blob/master/images/20200406screenshot.png" width="70%" height="70%">
 
 ### Tool Focus
@@ -15,13 +22,12 @@ This repository leverages Ansible's Declarative Infrastructure as Code (IaC) to 
     * PostgreSQL 10
 * Open Source Software
     * Airflow
+    * Spark (Work in Progress)
+    * dbt (Work in Progress)
 * Cloud
-    * AWS CLI 
+    * AWS [S3, DynamoDB, Lambda]
 
 All tools are open source or free tiers. Reference: https://free-for.dev/#/
-## Future Tools:
-* Spark
-* [dbt](https://www.getdbt.com/)
 
 ### Software Dependencies
 ```bash
@@ -34,12 +40,7 @@ Ubuntu:18.04 Operating System
 ### PostgreSQL Database Object Conflicts
 Make sure you do not have a local Postgres Database and Roles called `airflow`.
 
-## Download and Installation
-Downloading the playbook to install Data Engineering tools on your server.
-```bash
-git clone https://github.com/angelddaz/de-devtools ~/de-devtools
-cd ~/de-devtools && make local
-```
+
 
 ## Running Installed Tools After Running ansible-playbook
 
@@ -69,9 +70,9 @@ Coming soon!
 Building a docker image and running a docker container.
 ```bash
 # Creates image
-docker build -t de-devtools .
+make
 # run container on image
-docker run --rm -it de-devtools /bin/bash
+make container
 ```
 
 ## Code Format Standards
