@@ -61,7 +61,7 @@ docker-compose -f docker-compose-LocalExecutor.yml up -d
 ```
 
 **(Optional)** Make an alias in your `~/.bashrc` file for easier [CLI](https://airflow.apache.org/docs/stable/cli.html) usage `airflow [subcommand]`: 
-* `alias airflow=docker run --rm -it puckel/docker-airflow airflow'
+* `alias airflow='docker run --rm -it puckel/docker-airflow airflow'`
 
 ### Spark
 Coming soon!
