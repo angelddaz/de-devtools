@@ -1,0 +1,14 @@
+- name: set airflow metadata db to local postgres
+  lineinfile:
+    path: ~/de-devtools/docker-airflow/config/airflow.cfg
+    regexp: '^# sql_alchemy_conn = sqlite:.*$'
+    line: 'sql_alchemy_conn = postgres://postgres@localhost:5432'
+    state: present
+
+- name: airflow config do not load example dags
+  lineinfile:
+    path: ~/de-devtools/docker-airflow/config/airflow.cfg
+    regexp: '^load_examples = True.*$'
+    line: 'load_examples = False'
+    state: present
+

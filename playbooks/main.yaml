@@ -2,7 +2,9 @@
 - hosts: localhost
   become: true
   roles:
-    - base
+    - role: base
+      vars:
+        user: root
     - boto
     - aws-cli
     - postgres

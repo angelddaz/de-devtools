@@ -41,6 +41,28 @@ git clone https://github.com/angelddaz/de-devtools ~/de-devtools
 ansible-playbook ~/de-devtools/main.yml
 ```
 
+## Running Installed Tools After Running ansible-playbook
+### Airflow
+1. Build the downloaded and configured puckel docker image
+```bash
+cd ~/de-devtools/docker-airflow
+docker build .
+```
+2. Run a preconfigured container off of the built image
+```bash
+# still in ~/de-devtools/docker-airflow
+docker-compose -f docker-compose-LocalExecutor.yml up -d
+```
+
+#### Airflow notes:
+Create and Edit DAGs here:
+* `~/de-devtools/airflow_home/dags` 
+
+**(Optional)** Make an alias in your `~/.bashrc` file for easier [CLI](https://airflow.apache.org/docs/stable/cli.html) usage `airflow [subcommand]`: 
+* `alias airflow=docker run --rm -it puckel/docker-airflow airflow'
+UI here: 
+* [localhost:8080](http://localhost:8080/)
+
 ## Testing
 Building a docker image and running a docker container.
 ```bash

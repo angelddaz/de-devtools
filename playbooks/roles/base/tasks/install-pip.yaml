@@ -1,0 +1,6 @@
+---
+- name: install pip dependencies
+  become: yes
+  pip:
+    name: ['docker', 'docker-compose']
+
