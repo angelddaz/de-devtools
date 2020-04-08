@@ -6,6 +6,8 @@ This repository lets you to be five commands away from writing ELT code with a m
 
 This repository leverages Ansible's Declarative Infrastructure as Code (IaC) to install and configure DE tools.
 
+The goal of this project is to automate deployment of production-ready Data Engineering tools on any EC2 instance.
+
 ## Download and Installation
 Downloading the playbook to install Data Engineering tools on your server.
 ```bash
