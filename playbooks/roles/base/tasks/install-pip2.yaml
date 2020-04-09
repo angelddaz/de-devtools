@@ -5,7 +5,7 @@
 - name: install pip2 dependencies
   become: yes
   pip:
-    name: ['boto3']
+    name: ['boto3', 'botocore']
     executable: /usr/bin/pip2
 
 
