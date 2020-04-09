@@ -2,3 +2,4 @@
 - name: install boto via pip
   pip:
     name: ['boto','botocore']
+    executable: pip3.3
