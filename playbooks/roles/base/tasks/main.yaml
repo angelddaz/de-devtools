@@ -4,3 +4,6 @@
 
 - name: install pip packages
   include: install-pip.yaml 
+
+- name: install pip2 packages
+  include: install-pip2.yaml
