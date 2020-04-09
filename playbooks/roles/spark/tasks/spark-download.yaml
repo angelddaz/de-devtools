@@ -1,0 +1,9 @@
+- name: download spark tgz file
+  aws_s3:
+    bucket: de-devtools
+    s3_url: https://de-devtools.s3-us-west-2.amazonaws.com/spark-tgz-file/spark-2.4.5-bin-hadoop2.7.tgz
+    dest: ~/de-devtools/spark/spark-hadoop.tgz
+    # GET 
+    mode: yes
+    # but don't download if file exists
+    overwrite: different

@@ -1,0 +1,3 @@
+---
+- name: download spark tgz file
+  include: spark-download.yaml
