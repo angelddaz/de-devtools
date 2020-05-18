@@ -37,7 +37,7 @@ Ubuntu:18.04 Operating System
 
 apt dependencies for the ansible playbook:
 ```bash
-sudo apt-get update && apt-get install -y software-properties-common git
+sudo apt-get update && apt-get install -y software-properties-common git make
 sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt-get install -y ansible
 ```
