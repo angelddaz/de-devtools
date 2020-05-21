@@ -6,7 +6,7 @@ container:
 
 # drop `airflow` db and user from local posgresql server
 clean:
-	ansible-playbook ./playbooks/cleanup.yaml
+	sudo ansible-playbook ./playbooks/cleanup.yaml
 
 local:
 	sudo ansible-playbook ./playbooks/main.yaml
