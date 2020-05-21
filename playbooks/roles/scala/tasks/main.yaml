@@ -1,0 +1,7 @@
+---
+- name: download scala tgz file
+  include: scala-download.yaml
+
+- name: unpack scala binaries
+  include: scala-install.yaml
+

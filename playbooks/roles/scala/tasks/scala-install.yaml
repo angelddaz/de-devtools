@@ -1,0 +1,10 @@
+- name: create dir for scala binaries
+  file:
+    path: /usr/local/scala
+    state: directory
+    # mode: '0755'
+
+- name: unarchive scala tgz file
+  unarchive:
+    src: ~/de-devtools/scala/scala.tgz
+    dest: /usr/local/scala

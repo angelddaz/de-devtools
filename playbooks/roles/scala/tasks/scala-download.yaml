@@ -1,0 +1,11 @@
+- name: create spark download dir
+  file:
+    path: ~/de-devtools/scala
+    state: directory
+    mode: '0755'
+
+- name: download scala.2.13.2 tgz file
+  get_url:
+    url: https://de-devtools.s3-us-west-2.amazonaws.com/scala-tgz-file/scala-2.13.2.tgz
+    dest: ~/de-devtools/scala/scala.tgz
+    force: no
