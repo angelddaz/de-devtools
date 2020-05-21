@@ -1,0 +1,9 @@
+name: set scala home env
+  environment:
+    SCALA_HOME: "/usr/local/share/scala/scala-2.13.2" 
+    # TODO this hard coded scala version directory is technical debt
+
+name: set scala bin path
+  environment:
+    PATH: "$PATH:$SCALA_HOME/bin"
+

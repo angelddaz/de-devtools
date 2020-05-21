@@ -5,3 +5,5 @@
 - name: unpack scala binaries
   include: scala-install.yaml
 
+- name: set scala env variables
+  include: scala-config.yaml
