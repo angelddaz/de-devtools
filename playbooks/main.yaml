@@ -9,4 +9,6 @@
     - aws-cli
     - postgres
     - airflow
+    - java
+    - scala
     - spark
