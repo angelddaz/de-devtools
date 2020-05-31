@@ -1,0 +1,14 @@
+- name: ensure spark dir exists
+  file:
+    path: /opt/spark
+    state: directory
+
+- name: extract spark tgz file
+  unarchive:
+    src: ~/de-devtools/spark/spark-hadoop.tgz
+    dest: /opt/spark
+    remote_src: yes
+
+- name: move all files into `spark` folder out of `spark-hadoop-version`
+  shell: cp /opt/spark/spark*/* -r  /opt/spark/ && rm /opt/spark/spark*/ -rf
+    

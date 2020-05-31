@@ -1,0 +1,55 @@
+- name: setting spark home env var
+  lineinfile:
+    path: /etc/environment
+    line: 'SPARK_HOME=/opt/spark'
+
+- name: setting pyspark interpreter
+  lineinfile:
+    path: /etc/environment
+    line: 'PYSPARK_PYTHON=/usr/bin/python3'
+
+- name: appending spark path to existing sys wide path var
+  shell: 
+    cmd: sed -i --expression "s|$( cat /etc/environment | grep PATH )|$( cat /etc/environment | grep PATH | sed 's/.$//' | awk -v a=':$SPARK_HOME/bin:$SPARK_HOME/sbin/' '{print $1 a}')|" /etc/environment
+    executable: /bin/bash
+  
+  # this is a really long command at about 190+ chars
+  # I'll explain each part in the following code block
+  # note: asterisks `*` are used as string literal wildcards in the following comment block.
+
+
+  #### Start a string substitution command #####
+  # `sed -i --expression`
+  # execute the following expressions in place
+
+  # `"` start of the expression sed will execute
+  # `s` substitute
+  # `|` sed will accept any delimiter, so I choise pip as it should not exist in PATH
+  
+  #### original line to replace #####
+  # `$(*|*)` the dollar sign returns the string result of the cat and grep inside the parens
+  
+  # `|` another delimiter!
+
+  #### replacement/substituion string ####
+  # `$(*|*|sed 's/.$//' |` get the same path line but remove the last character which is `"`
+  # ` awk -v a='*'` creates a variable `a` that holds the string to append
+  # `'{print $1 a}'` an awk command that prints the stdout of the previous pipe (a sed command) and our a var next to each other
+
+### Appending one last double quote because
+# it makes life too complicated to try to append in a sensitive sed substitute command
+- name: appending double quotes to existing sys wide path var
+  shell: 
+    cmd: sed -i --expression "s|$( cat /etc/environment | grep PATH) | $( cat /etc/environment | grep PATH | awk -v q=\" '{print $1 q}'|" /etc/environment
+    executable: /bin/bash
+
+# awk -v q=\"\\\"\" # \"{print $1 q}\"
+# awk -v q="\"" "{print $1 q}"
+
+
+
+
+
+
+
+
