@@ -1,3 +1,9 @@
 ---
 - name: download spark tgz file
   include: spark-download.yaml
+
+- name: extract spark tgx file
+  include: spark-extract-move.yaml
+
+- name: config spark environment variables
+  include: spark-config.yaml
