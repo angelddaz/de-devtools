@@ -1,0 +1,13 @@
+---
+- name: add airflow home env variable
+  lineinfile:
+    path: /etc/environment
+    line: 'export AIRFLOW_HOME=~/airflow'
+
+- pip:
+    name: ['apache-airflow']
+    executable: pip3
+
+- name: initialize airflow db
+  shell: airflow initdb
+
