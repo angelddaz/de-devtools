@@ -2,5 +2,5 @@
 - name: install pip dependencies
   become: yes
   pip:
-    name: ['docker', 'docker-compose']
-
+    name: ['psycopg2-binary']
+    executable: pip3

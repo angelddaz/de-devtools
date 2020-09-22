@@ -1,13 +1,17 @@
 - name: set airflow metadata db to local postgres
   lineinfile:
-    path: ~/de-devtools/docker-airflow/config/airflow.cfg
-    regexp: '^# sql_alchemy_conn = sqlite:.*$'
-    line: 'sql_alchemy_conn = postgres://postgres@localhost:5432'
+    path: ~/airflow/airflow.cfg
+    regexp: '^sql_alchemy_conn = sqlite:.*$'
+    line: 'sql_alchemy_conn = postgres://airflow:airflow@localhost:5432'
     state: present
+
+- name: clean up sqlite db
+  shell: airflow resetdb -y
+
 
 - name: airflow config do not load example dags
   lineinfile:
-    path: ~/de-devtools/docker-airflow/config/airflow.cfg
+    path: ~/airflow/airflow.cfg
     regexp: '^load_examples = True.*$'
     line: 'load_examples = False'
     state: present
