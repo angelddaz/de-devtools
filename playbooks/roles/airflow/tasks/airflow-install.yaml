@@ -4,14 +4,6 @@
     path: /etc/environment
     line: 'AIRFLOW_HOME=~/airflow'
 
-- name: change executor to local by default
-  lineinfile:
-    path: /home/ubuntu/airflow/airflow.cfg
-    regexp: 'executor = SequentialExecutor'
-    line: 'executor = LocalExecutor'
-    state: present
-
-
 - pip:
     name: ['apache-airflow']
     executable: pip3
@@ -24,7 +16,13 @@
     owner: ubuntu
     group: ubuntu
 
-
 - name: initialize airflow db
   shell: airflow initdb
+
+- name: change executor to local by default
+  lineinfile:
+    path: /home/ubuntu/airflow/airflow.cfg
+    regexp: 'executor = SequentialExecutor'
+    line: 'executor = LocalExecutor'
+    state: present
 
