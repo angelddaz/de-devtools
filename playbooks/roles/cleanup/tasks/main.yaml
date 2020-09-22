@@ -1,10 +1,14 @@
 ---
-- name: drop airflow user
-  command: psql -c 'DROP USER airflow;'
+- name: drop owned
+  command: psql -c 'DROP OWNED BY airflow;'
   become_user: postgres
 
 - name: drop airflow db
   command: psql -c 'DROP DATABASE airflow;'
+  become_user: postgres
+
+- name: drop airflow user
+  command: psql -c 'DROP USER airflow;'
   become_user: postgres
 
 - name: rm airflow_home

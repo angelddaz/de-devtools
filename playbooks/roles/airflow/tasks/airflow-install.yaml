@@ -2,11 +2,28 @@
 - name: add airflow home env variable
   lineinfile:
     path: /etc/environment
-    line: 'export AIRFLOW_HOME=~/airflow'
+    line: 'AIRFLOW_HOME=~/airflow'
+
+- name: change executor to local by default
+  lineinfile:
+    path: /home/ubuntu/airflow/airflow.cfg
+    regexp: 'executor = SequentialExecutor'
+    line: 'executor = LocalExecutor'
+    state: present
+
 
 - pip:
     name: ['apache-airflow']
     executable: pip3
+
+- name: Change Airflow dir permissions
+  file:
+    path: /home/ubuntu/airflow
+    state: directory
+    recurse: yes
+    owner: ubuntu
+    group: ubuntu
+
 
 - name: initialize airflow db
   shell: airflow initdb

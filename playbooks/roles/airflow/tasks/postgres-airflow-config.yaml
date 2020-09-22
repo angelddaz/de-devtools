@@ -10,3 +10,7 @@
 - name: making airflow superuser 
   command: psql -c 'ALTER USER airflow WITH SUPERUSER;'
   become_user: postgres
+
+- name: giving airflow password - not secure
+  command: psql -c "ALTER USER airflow WITH PASSWORD 'airflow';"
+  become_user: postgres

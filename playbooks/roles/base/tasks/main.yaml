@@ -2,3 +2,5 @@
 - name: install apt packages 
   include: install-apt.yaml 
 
+- name: install apt packages 
+  include: install-pip.yaml
