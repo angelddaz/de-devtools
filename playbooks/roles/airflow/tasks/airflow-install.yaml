@@ -10,7 +10,15 @@
 
 - name: Change Airflow dir permissions
   file:
-    path: /home/ubuntu/airflow
+    path: ~/airflow
+    state: directory
+    recurse: yes
+    owner: ubuntu
+    group: ubuntu
+
+- name: Change Airflow log dir permissions
+  file:
+    path: ~/airflow/logs
     state: directory
     recurse: yes
     owner: ubuntu
@@ -21,7 +29,7 @@
 
 - name: change executor to local by default
   lineinfile:
-    path: /home/ubuntu/airflow/airflow.cfg
+    path: ~/airflow/airflow.cfg
     regexp: 'executor = SequentialExecutor'
     line: 'executor = LocalExecutor'
     state: present
