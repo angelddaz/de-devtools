@@ -1,6 +1,5 @@
 ---
 - hosts: localhost
-  become: true
   roles:
     - base
     - boto
