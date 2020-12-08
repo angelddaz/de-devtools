@@ -9,5 +9,5 @@ RUN useradd -ms /bin/bash ubuntu
 USER ubuntu
 WORKDIR /home/ubuntu
 RUN git clone -b dockerfix https://github.com/angelddaz/de-devtools.git /home/ubuntu/de-devtools/
-RUN ansible-playbook /home/ubuntu/de-devtools/playbooks/main.yaml
+RUN ansible-playbook /home/ubuntu/de-devtools/playbooks/main.yaml -vvv
 RUN echo 'root:docker' | chpasswd
