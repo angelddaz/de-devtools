@@ -1,7 +1,6 @@
 FROM ubuntu:18.04
-RUN apt-get update && apt-get install -y software-properties-common git sudo
-RUN apt-add-repository --yes --update ppa:ansible/ansible
-RUN apt-get install -y ansible
+RUN apt-get update && apt-get install -y software-properties-common git sudo python3-pip
+RUN pip3 install ansible
 
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 
