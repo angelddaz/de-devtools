@@ -1,6 +1,7 @@
 ---
 - name: Update all packages
   apt: upgrade=dist
+  become: yes
 
 - name: install basic packages
   apt:
