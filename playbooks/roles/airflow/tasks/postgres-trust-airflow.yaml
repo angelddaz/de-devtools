@@ -1,6 +1,6 @@
 ---
 - name: edit postgres config for airflow connections
   lineinfile:
-    path: /etc/postgresql/10/main/pg_hba.conf
+    path: /etc/postgresql/12/main/pg_hba.conf
     line: "host    all             airflow          0.0.0.0/0                trust"
     insertafter: EOF

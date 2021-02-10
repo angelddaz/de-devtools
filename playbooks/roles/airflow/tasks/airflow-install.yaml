@@ -8,25 +8,6 @@
     name: ['apache-airflow']
     executable: pip3
 
-- name: Change Airflow dir permissions
-  file:
-    path: ~/airflow
-    state: directory
-    recurse: yes
-    owner: ubuntu
-    group: ubuntu
-
-- name: Change Airflow log dir permissions
-  file:
-    path: ~/airflow/logs
-    state: directory
-    recurse: yes
-    owner: ubuntu
-    group: ubuntu
-
-- name: initialize airflow db
-  shell: airflow initdb
-
 - name: change executor to local by default
   lineinfile:
     path: ~/airflow/airflow.cfg

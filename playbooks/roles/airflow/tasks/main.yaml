@@ -6,9 +6,6 @@
 - name: start postgres as service
   include: postgres-start-service.yaml
 
-- name: create airflow db objects
-  include: postgres-airflow-config.yaml
-
 # airflow install and config
 - name: install apache airflow
   include: airflow-install.yaml
