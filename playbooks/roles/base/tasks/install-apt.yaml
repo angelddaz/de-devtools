@@ -5,4 +5,4 @@
 
 - name: install basic packages
   apt:
-    name: ['curl', 'vim', 'docker', 'libxslt1-dev', 'libxml2-dev', 'zip', 'libssl-dev', 'unzip', 'python-pip', 'python3-pip', 'python-psycopg2', 'apg', 'mercurial', 'git', 'python-dev', 'python3-apt', 'docker.io']
+    name: ['curl', 'vim', 'docker', 'containerd', 'libxslt1-dev', 'libxml2-dev', 'zip', 'libssl-dev', 'unzip', 'python3-pip', 'python3-psycopg2', 'apg', 'mercurial', 'git', 'python-dev', 'python3-apt', 'docker.io']
